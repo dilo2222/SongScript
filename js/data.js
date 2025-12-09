@@ -1,6 +1,7 @@
 export const songs = [
 
     {
+        
         title: "I Got Better",
         artist: "Morgan Wallen",
         duration: "3:45",
