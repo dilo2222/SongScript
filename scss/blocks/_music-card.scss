@@ -80,10 +80,11 @@
 .music_card-lyric {
   color: #bab4ca;
   font-size: 20px;
-  text-decoration: italic;
+  font-style: italic;
   line-height: 40px;
   display: flex;
   justify-content: center;
+  margin: 0 20px;
 }
 
 .music_card-quot {

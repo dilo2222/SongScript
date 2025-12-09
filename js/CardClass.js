@@ -1,4 +1,4 @@
-import { songs } from "./data"
+
 
 class Card {
   constructor(title, artist, duration, lyrics) {
@@ -9,6 +9,7 @@ class Card {
   }
 
   createCard() {
+     const ulEl =  document.querySelector('.music_list')
     this.liEl = document.createElement('li')
     this.liEl.classList.add('music_item')
 
@@ -31,13 +32,21 @@ class Card {
               </svg>
           </div>
     `
+
+    ulEl.append(this.liEl)
   }
 
 }
 
-export function renderCards() {
-   const ulEL =  document.querySelector('.music_list')
+export async function renderCards() {
+   const ulEl =  document.querySelector('.music_list')
+   ulEl.innerHTML = ""
 
-   songs.f
+  const songsList = await fetch("./js/data.json")
+  const songsData = await songsList.json()
+  songsData.forEach((song) => {
+    const card =  new Card(song.title, song.artist, song.duration, song.lyrics)
+    card.createCard()
+  })
 }
 
