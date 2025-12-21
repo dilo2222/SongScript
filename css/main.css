@@ -169,6 +169,15 @@
   gap: 30px;
 }
 
+.favorite_list {
+  display: none;
+  grid-template-columns: repeat(3, 300px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  gap: 30px;
+}
+
 .music_item {
   display: flex;
   flex-direction: column;

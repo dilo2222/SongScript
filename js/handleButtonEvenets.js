@@ -85,7 +85,35 @@ export function navFunc(el) {
     case "songs": 
     renderCards()
     handleSearch()
+    const ulEl1 = document.querySelector(".music_list");
+    const ulEl = document.querySelector(".favorite_list");
+    ulEl1.style.display = "grid"
+    ulEl.style.display = "none"
     break;
+    case "favorite": 
+    
+    handleSearch()
 
   }
+
+
+  const favs = document.querySelector(".header_menu-favoriteBtn")
+  favs.addEventListener("click", function(e) {
+    e.preventDefault;
+    const ulEl1 = document.querySelector(".music_list");
+    const ulEl = document.querySelector(".favorite_list");
+    ulEl.style.display = "grid"
+    ulEl1.style.display = "none"
+    console.log("hii")
+    navFunc("favorite")
+  })
+}
+
+
+export function doSongPage() {
+  const pageLogo = document.querySelector(".header_logo")
+  pageLogo.addEventListener("click", function(e) {
+    e.preventDefault()
+    navFunc("songs")
+  })
 }

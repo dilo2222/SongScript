@@ -10,8 +10,8 @@ class Card {
     this._liked = liked;
   }
 
-  createCard() {
-    const ulEl = document.querySelector(".music_list");
+  createCard(cont) {
+
     this.liEl = document.createElement("li");
     this.liEl.classList.add("music_item");
 
@@ -50,19 +50,9 @@ class Card {
               </label>
     `;
 
-    const checkLiked = this.liEl.querySelector(".music_card-likedCheck")
-    checkLiked.addEventListener("change", () => {
-      if (checkLiked.checked) {
-        console.log("checked")
-
-      } 
-
-    })
-
-
-
-    ulEl.append(this.liEl);
+    cont.append(this.liEl);
   }
+
 }
 
 export async function renderCards() {
@@ -97,17 +87,13 @@ export async function renderCards() {
         song.mp3,
         song.liked
       );
-      card.createCard();
+      card.createCard(ulEl);
  
     });
   }
 
   createIntro()
-
   doRender(songsData);
-
-  playSong();
-
-  
+  playSong(); 
     
 }
