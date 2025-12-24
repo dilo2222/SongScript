@@ -76,9 +76,6 @@ export function createIntro() {
 }
 
 export function navFunc(el) {
-  const ulEl1 = document.querySelector(".music_list");
-  const ulEl = document.querySelector(".favorite_list");
-
   switch (el) {
     case "songs":
       renderCards();
@@ -89,26 +86,37 @@ export function navFunc(el) {
       renderCards();
       handleSearch();
   }
+}
 
+export function createfavoriteList() {
 
-    const favBtn = document.querySelector(".header_menu-favoriteBtn")
-    favBtn.addEventListener("click", function(e) {
-      e.preventDefault()
-      navFunc("favorite")
-      const checkedfavCards = Array.from(ulEl1.querySelectorAll(".music_card-likedCheck:checked"))
-      
+  const ulEl1 = document.querySelector(".music_list");
+  const ulEl = document.querySelector(".favorite_list");
 
-      checkedfavCards.map((item) => {
-        
-      const a = item.closest(".music_item") 
-        ulEl.appendChild(a.cloneNode(true))
-      })
+  const favBtn = document.querySelector(".header_menu-favoriteBtn");
 
-      
-      
+  favBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    navFunc("favorite");
 
-    })
-  
+    const checkedfavCards = Array.from(
+      ulEl1.querySelectorAll(".music_card-likedCheck:checked")
+    );
+
+    ulEl1.style.display = "none";
+     ulEl.style.display = "grid";
+
+    checkedfavCards.map((item) => {
+      const a = item.closest(".music_item");
+
+      const exists = Array.from(ulEl.querySelectorAll(".music_item"))?.some(
+        (i) => i.dataset.id === a.dataset.id
+      );
+      if (!exists) {
+        ulEl.appendChild(a.cloneNode(true));
+      }
+    });
+  });
 }
 
 export function doSongPage() {
@@ -116,5 +124,10 @@ export function doSongPage() {
   pageLogo.addEventListener("click", function (e) {
     e.preventDefault();
     navFunc("songs");
+    const ulEl1 = document.querySelector(".music_list");
+     const ulEl = document.querySelector(".favorite_list");
+
+     ulEl1.style.display = "grid";
+     ulEl.style.display = "none";
   });
 }

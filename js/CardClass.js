@@ -2,17 +2,19 @@ import { playSong } from "./handleButtonEvenets.js";
 import { createIntro } from "./handleButtonEvenets.js";
 
 class Card {
-  constructor(title, artist, lyrics, mp3, liked) {
+  constructor(title, artist, lyrics, mp3, liked, id) {
     this.title = title;
     this.artist = artist;
     this.mp3 = mp3;
     this.lyrics = lyrics;
     this._liked = liked;
+    this._id = id
   }
 
   createCard(cont) {
     this.liEl = document.createElement("li");
     this.liEl.classList.add("music_item");
+    this.liEl.dataset.id = this._id
 
     this.liEl.innerHTML = `
           <div class="music_card">
@@ -79,13 +81,14 @@ export async function renderCards() {
   });
 
   function doRender(list) {
-    list.forEach((song) => {
+    list.forEach((song, index) => {
       const card = new Card(
         song.title,
         song.artist,
         song.lyrics,
         song.mp3,
-        song.liked
+        song.liked,
+        song.id = index
       );
       card.createCard(ulEl);
     });
