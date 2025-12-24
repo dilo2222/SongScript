@@ -1,11 +1,15 @@
 .header {
   background-image: linear-gradient(90deg, #020411, #23023c);
-  padding: 10px 150px;
+  padding: 10px 0;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
+
+  .container {
+    padding: 0 150px;
+  }
 }
 
 .header_wrapper {

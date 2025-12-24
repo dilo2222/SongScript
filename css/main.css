@@ -1,11 +1,14 @@
 .header {
   background-image: linear-gradient(90deg, #020411, #23023c);
-  padding: 10px 150px;
+  padding: 10px 0;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
+}
+.header .container {
+  padding: 0 150px;
 }
 
 .header_wrapper {
@@ -150,6 +153,15 @@
   text-align: center;
   color: #967eb1;
   font-size: 20px;
+}
+
+.footer_wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.footer_inner {
+  grid-column: span 1;
 }
 
 .music_all {
@@ -309,8 +321,6 @@ a {
 main {
   padding: 100px 0 0 0;
   background-image: linear-gradient(150deg, #0c0926, #380462, #0c0926);
-  min-height: 100vh;
-  min-width: 100vw;
 }
 
 .visually-hidden {

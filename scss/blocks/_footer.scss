@@ -1,0 +1,8 @@
+.footer_wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.footer_inner {
+  grid-column: span 1;
+}
