@@ -124,14 +124,13 @@ export function doSongPage() {
   const pageLogo = document.querySelector(".header_menu-homeBtn");
   pageLogo.addEventListener("click", function (e) {
     e.preventDefault();
-    navFunc("songs");
     const ulEl1 = document.querySelector(".music_list");
      const ulEl = document.querySelector(".favorite_list");
 
      ulEl1.style.display = "grid";
      ulEl.style.display = "none";
 
-     window.location.reload()
+      window.location.href = window.location.href;
   });
 }
 
