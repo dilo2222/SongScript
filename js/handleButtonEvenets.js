@@ -89,7 +89,7 @@ export function navFunc(el) {
 }
 
 export function createfavoriteList() {
-
+  
   const ulEl1 = document.querySelector(".music_list");
   const ulEl = document.querySelector(".favorite_list");
 
@@ -102,6 +102,7 @@ export function createfavoriteList() {
     const checkedfavCards = Array.from(
       ulEl1.querySelectorAll(".music_card-likedCheck:checked")
     );
+
 
     ulEl1.style.display = "none";
      ulEl.style.display = "grid";
@@ -120,7 +121,7 @@ export function createfavoriteList() {
 }
 
 export function doSongPage() {
-  const pageLogo = document.querySelector(".header_logo");
+  const pageLogo = document.querySelector(".header_menu-homeBtn");
   pageLogo.addEventListener("click", function (e) {
     e.preventDefault();
     navFunc("songs");
