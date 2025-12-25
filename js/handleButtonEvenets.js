@@ -130,6 +130,8 @@ export function doSongPage() {
 
      ulEl1.style.display = "grid";
      ulEl.style.display = "none";
+
+     window.location.reload()
   });
 }
 
