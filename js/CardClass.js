@@ -2,10 +2,11 @@ import { playSong } from "./handleButtonEvenets.js";
 import { createIntro } from "./handleButtonEvenets.js";
 
 class Card {
+
   constructor(title, artist, lyrics, mp3, liked, id) {
     this.title = title;
-    this.artist = artist;
-    this.mp3 = mp3;
+    this.artist = artist; 
+    this.mp3 = mp3 || null;
     this.lyrics = lyrics;
     this._liked = liked;
     this._id = id
@@ -34,7 +35,7 @@ class Card {
                 <use href="./img/sprite.svg#quatation-icon"></use>
               </svg>
              
-              <audio class="music_card-audio " controls>
+              <audio class="music_card-audio ">
                 <source src="${this.mp3}" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
