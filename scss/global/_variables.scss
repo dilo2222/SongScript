@@ -1,2 +1,11 @@
 @mixin vp-tablet {
+  @media (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin vp-mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
 }

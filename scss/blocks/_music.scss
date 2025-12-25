@@ -34,6 +34,11 @@
 
 .music_logo-icon {
   color: #9e60d6;
+
+  @include vp-mobile {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .music_logo {
@@ -47,10 +52,20 @@
   font-size: 28px;
   font-weight: 500;
   color: #fff;
+
+  @include vp-mobile {
+    font-size: 18px;
+    font-weight: 400;
+  }
 }
 
 .music_descrb {
   text-align: center;
   color: #967eb1;
   font-size: 20px;
+
+  @include vp-mobile {
+    font-size: 15px;
+    font-weight: 400;
+  }
 }

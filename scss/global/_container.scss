@@ -2,4 +2,12 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
+
+  @include vp-tablet {
+    padding: 0 30px;
+  }
+
+  @include vp-mobile {
+    padding: 0 15px;
+  }
 }

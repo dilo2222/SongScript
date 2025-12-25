@@ -9,6 +9,14 @@
 
   .container {
     padding: 0 150px;
+
+    @include vp-tablet {
+      padding: 0 100px;
+    }
+
+    @include vp-mobile {
+      padding: 0 20px;
+    }
   }
 }
 
@@ -21,6 +29,12 @@
 .header_menu-list {
   display: flex;
   gap: 30px;
+  list-style: none;
+  align-items: center;
+
+  @include vp-mobile {
+    gap: 10px;
+  }
 }
 
 .header_menu-item {
@@ -50,9 +64,14 @@
     padding: 5px;
     border-radius: 10px;
     outline: none;
+    z-index: 1000;
 
     &:hover {
       background-color: #e1f0f6;
+    }
+
+    @include vp-mobile {
+      max-width: 70px;
     }
   }
 }
@@ -70,6 +89,12 @@
   width: 60px;
   padding: 10px;
   color: #d9c5ee;
+
+  @include vp-mobile {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
 }
 
 .header_logo-text {
@@ -77,6 +102,10 @@
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
+
+  @include vp-mobile {
+    display: none;
+  }
 }
 
 .header_menu-favoriteList {

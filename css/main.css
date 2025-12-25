@@ -10,6 +10,16 @@
 .header .container {
   padding: 0 150px;
 }
+@media (max-width: 1023px) {
+  .header .container {
+    padding: 0 100px;
+  }
+}
+@media (max-width: 767px) {
+  .header .container {
+    padding: 0 20px;
+  }
+}
 
 .header_wrapper {
   display: flex;
@@ -20,6 +30,13 @@
 .header_menu-list {
   display: flex;
   gap: 30px;
+  list-style: none;
+  align-items: center;
+}
+@media (max-width: 767px) {
+  .header_menu-list {
+    gap: 10px;
+  }
 }
 
 .header_menu-item {
@@ -49,9 +66,15 @@
   padding: 5px;
   border-radius: 10px;
   outline: none;
+  z-index: 1000;
 }
 .header_menu-searchSong .header_menu-inputSearch:hover {
   background-color: #e1f0f6;
+}
+@media (max-width: 767px) {
+  .header_menu-searchSong .header_menu-inputSearch {
+    max-width: 70px;
+  }
 }
 
 .header_logo {
@@ -68,12 +91,24 @@
   padding: 10px;
   color: #d9c5ee;
 }
+@media (max-width: 767px) {
+  .header__logo-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+}
 
 .header_logo-text {
   color: #d9c5ee;
   font-weight: 500;
   font-size: 20px;
   line-height: 24px;
+}
+@media (max-width: 767px) {
+  .header_logo-text {
+    display: none;
+  }
 }
 
 .header_menu-favoriteList {
@@ -135,6 +170,12 @@
 .music_logo-icon {
   color: #9e60d6;
 }
+@media (max-width: 767px) {
+  .music_logo-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
 
 .music_logo {
   display: flex;
@@ -148,17 +189,34 @@
   font-weight: 500;
   color: #fff;
 }
+@media (max-width: 767px) {
+  .music_logo-text {
+    font-size: 18px;
+    font-weight: 400;
+  }
+}
 
 .music_descrb {
   text-align: center;
   color: #967eb1;
   font-size: 20px;
 }
+@media (max-width: 767px) {
+  .music_descrb {
+    font-size: 15px;
+    font-weight: 400;
+  }
+}
 
 .footer_wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 50px 0;
+  padding: 30px 0 20px;
+}
+@media (max-width: 767px) {
+  .footer_wrapper {
+    padding: 20px 0 10px;
+  }
 }
 
 footer {
@@ -178,10 +236,22 @@ footer {
 .footer_section {
   margin: 0 0 20px;
 }
+@media (max-width: 767px) {
+  .footer_section {
+    margin: 0 0 10px;
+  }
+}
 
 .footer_section-title {
   color: #eccfe2;
   margin: 0 0 10px;
+}
+@media (max-width: 767px) {
+  .footer_section-title {
+    margin: 0 0 5px;
+    font-size: 20px;
+    text-align: center;
+  }
 }
 
 .footer_section-link {
@@ -192,13 +262,21 @@ footer {
   color: #9677b2;
   transition: color ease-in 0.3s;
 }
-.footer_section-link:hover {
+@media (max-width: 767px) {
+  .footer_section-link {
+    font-size: 15px;
+  }
+}
+.footer_section-link:hover, .footer_section-link:focus-visible {
   color: #cecdcf;
   transition: color ease-in 0.3s;
 }
-.footer_section-link:hover .footer_section-link-logo {
+.footer_section-link:hover .footer_section-link-logo, .footer_section-link:focus-visible .footer_section-link-logo {
   transform: scale(1.2);
   transition: transform ease-in 0.3s;
+}
+.footer_section-link:visited {
+  color: #bdaecb;
 }
 
 .footer_section-link-logo {
@@ -209,28 +287,38 @@ footer {
 .music_all {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 40px;
   justify-content: center;
   padding: 150px 0 100px 0;
 }
-
-.music_list {
-  display: grid;
-  grid-template-columns: repeat(3, 300px);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  gap: 30px;
+@media (max-width: 767px) {
+  .music_all {
+    padding: 80px 0 50px 0;
+  }
 }
 
+.music_list,
 .favorite_list {
   display: grid;
   grid-template-columns: repeat(3, 300px);
   margin: 0;
+  justify-content: center;
   padding: 0;
   list-style: none;
   gap: 30px;
+  width: 100%;
+}
+@media (max-width: 1023px) {
+  .music_list,
+  .favorite_list {
+    grid-template-columns: repeat(2, 300px);
+  }
+}
+@media (max-width: 767px) {
+  .music_list,
+  .favorite_list {
+    grid-template-columns: 330px;
+  }
 }
 
 .music_item {
@@ -255,7 +343,12 @@ footer {
      -moz-user-select: none;
           user-select: none;
 }
-.music_card:hover {
+@media (max-width: 767px) {
+  .music_card {
+    min-height: 300px;
+  }
+}
+.music_card:hover, .music_card:focus, .music_card:focus-visible {
   border: 2px solid #48467b;
   box-shadow: 0 0 15px #48467b;
   scale: 1.05;
@@ -279,6 +372,12 @@ footer {
   justify-items: center;
   flex-direction: column;
   gap: 5px;
+}
+@media (max-width: 767px) {
+  .music_card-descrb {
+    font-size: 18px;
+    font-weight: 400;
+  }
 }
 
 .music_card-icon {
@@ -308,6 +407,12 @@ footer {
   display: flex;
   justify-content: center;
   margin: 0 20px;
+}
+@media (max-width: 767px) {
+  .music_card-lyric {
+    font-size: 18px;
+    font-weight: 400;
+  }
 }
 
 .music_card-quot {
@@ -345,6 +450,12 @@ footer {
 .music_card-likedIcon:hover {
   color: #b4b4b4;
   transition: color ease-in 0.3s;
+}
+@media (max-width: 767px) {
+  .music_card-likedIcon {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 .music_card-likedCheck:checked ~ .music_card-likedIcon {
@@ -385,4 +496,14 @@ main {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
+}
+@media (max-width: 1023px) {
+  .container {
+    padding: 0 30px;
+  }
+}
+@media (max-width: 767px) {
+  .container {
+    padding: 0 15px;
+  }
 }/*# sourceMappingURL=main.css.map */
