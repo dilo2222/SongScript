@@ -1,4 +1,4 @@
-import {navFunc, doSongPage, createfavoriteList} from "./handleButtonEvenets.js"
+import {navFunc, doSongPage, createfavoriteList, addClasses} from "./handleButtonEvenets.js"
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -6,4 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     navFunc("songs")
     doSongPage()
     createfavoriteList()
+   
+    
 })

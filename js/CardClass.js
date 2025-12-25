@@ -1,5 +1,5 @@
-import { playSong } from "./handleButtonEvenets.js";
-import { createIntro } from "./handleButtonEvenets.js";
+import { playSong , createIntro, addClasses} from "./handleButtonEvenets.js";
+
 
 class Card {
 
@@ -98,4 +98,6 @@ export async function renderCards() {
   createIntro();
   doRender(songsData);
   playSong();
+
+  console.log(addClasses())
 }

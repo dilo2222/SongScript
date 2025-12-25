@@ -134,4 +134,18 @@ export function doSongPage() {
   });
 }
 
+export function addClasses() {
+  const listOfClasses = ["purple_item", "green_item", "red_item"]
+  const allCards = Array.from(document.querySelectorAll(".music_item"))
+
+  return allCards.forEach((card) => {
+    if (listOfClasses.map((aClass) => card.classList.contains(aClass))) {
+      console.log("i dont contain any of those classes")
+    } else {
+      console.log("i contain some of em")
+    }
+  } )
+
+
+}
 
