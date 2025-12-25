@@ -74,6 +74,7 @@
 @media (max-width: 767px) {
   .header_menu-searchSong .header_menu-inputSearch {
     max-width: 70px;
+    height: 40px;
   }
 }
 
