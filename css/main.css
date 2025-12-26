@@ -318,7 +318,7 @@ footer {
 @media (max-width: 767px) {
   .music_list,
   .favorite_list {
-    grid-template-columns: 320px;
+    grid-template-columns: 310px;
   }
 }
 
