@@ -30,28 +30,24 @@ export function playSong() {
 }
 
 export function handleSearch() {
-  const searchBtn = document.querySelector(".header_menu-searchBtn");
-  const inputSearch = document.querySelector(".header_menu-searchSong");
-  const inputIcon = document.querySelector(".header_menu-searchIcon");
+  const searchLink = document.querySelector(".header_menu-searchBtn");
+  const labelSearch = document.querySelector(".header_menu-searchSong");
+  const searchIcon = document.querySelector(".header_menu-searchIcon")
 
-  searchBtn.addEventListener("click", function (e) {
-    e.preventDefault()
+  searchLink.addEventListener("click", function(e) {
+      
+      labelSearch.classList.toggle("visually-hidden-out")
+       searchLink.classList.toggle("visually-hidden-out")
 
-    console.log("im clicked")
-    searchBtn.classList.toggle("visually-hidden-out");
-    inputSearch.classList.toggle("visually-hidden-out");
+  })
 
-    if (!inputSearch.classList.contains("visually-hidden-out")) {
-      inputIcon.addEventListener("click", function (e) {
-        e.preventDefault(), 
-        
-        searchBtn.classList.toggle("visually-hidden-out");
-        inputSearch.classList.toggle("visually-hidden-out");
-      });
+   searchIcon.addEventListener("click", function(e) {
+        labelSearch.classList.toggle("visually-hidden-out")
+       searchLink.classList.toggle("visually-hidden-out")
+       })
 
-      inputSearch.value = "";
-    }
-  });
+
+
 }
 
 export function createIntro() {
@@ -84,10 +80,10 @@ export function navFunc(el) {
   switch (el) {
     case "songs":
       renderCards();
-
       break;
     case "favorite":
       renderCards();
+      break;
   }
 }
 
@@ -95,7 +91,6 @@ export function createfavoriteList() {
   
   const ulEl1 = document.querySelector(".music_list");
   const ulEl = document.querySelector(".favorite_list");
-  const searchBtn = document.querySelector(".header_menu-searchBtn")
 
   
 
@@ -104,10 +99,6 @@ export function createfavoriteList() {
   favBtn.addEventListener("click", function (e) {
     e.preventDefault();
     navFunc("favorite");
-
-    searchBtn.style.display = "none"
-
-
 
     const checkedfavCards = Array.from(
       ulEl1.querySelectorAll(".music_card-likedCheck:checked")
@@ -138,12 +129,10 @@ export function doSongPage() {
     const ulEl1 = document.querySelector(".music_list");
      const ulEl = document.querySelector(".favorite_list");
 
+     navFunc("songs")
+
      ulEl1.style.display = "grid";
      ulEl.style.display = "none";
-
-     const searchBtn = document.querySelector(".header_menu-searchBtn")
-
-  searchBtn.style.display = "flex"
 
       window.location.href = window.location.href;
   });

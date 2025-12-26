@@ -226,7 +226,7 @@ footer {
 
 .footer_inner {
   grid-column: span 1;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   list-style: none;
   display: flex;
@@ -318,7 +318,7 @@ footer {
 @media (max-width: 767px) {
   .music_list,
   .favorite_list {
-    grid-template-columns: 330px;
+    grid-template-columns: 320px;
   }
 }
 
@@ -491,6 +491,7 @@ main {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  pointer-events: none;
 }
 
 .container {
