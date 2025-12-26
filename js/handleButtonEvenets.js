@@ -6,25 +6,26 @@ export function playSong() {
   let currentSong = null;
 
   cards.forEach((card) => {
-    card.addEventListener("click", async function (e) {
+    card.addEventListener("click",  async(e) =>  {
       const song = card.querySelector(".music_card-audio");
 
       if (!song) return;
-
-      if (currentSong === song) {
-        if (song.paused) {
-          await song.play();
-        } else {
-          await song.pause();
-          return;
-        }
-      } else if (currentSong) {
+      try {
+         if (currentSong === song) {
+        song.paused ? await song.play() : await song.pause();
+        return
+      }
+      
+       if (currentSong) {
         currentSong.pause();
         currentSong.currentTime = 0;
       }
 
       await song.play();
       currentSong = song;
+      } catch(er) {
+        console.warn("Audio play failed:", err);
+      }
     });
   });
 }
